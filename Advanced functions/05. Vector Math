@@ -1,0 +1,16 @@
+solution = (function () {
+
+    function add([xa,xb],[ya,yb]){ return [xa+ya,xb+yb]; }
+    function multiply ([xa,xb], num) { return [xa*num, xb*num];}
+    function length ([xa, xb]) { return Math.sqrt((xa*xa) + (xb*xb));}
+    function dot ([xa, xb],[ya, yb]) { return (xa*xb) + (ya*yb)}
+    function cross ([xa, xb],[ya, yb]) { return (xa*yb) - (ya*xb)}
+
+    return {add, multiply, length, dot, cross};
+
+}())
+    console.log(solution.add([1, 1], [1, 0]));
+    console.log(solution.multiply([3.5, -2], 2));
+    console.log(solution.length([3, -4]));
+    console.log(solution.dot([1, 0], [0, -1]));
+    console.log(solution.cross([3, 7], [1, 0]));
