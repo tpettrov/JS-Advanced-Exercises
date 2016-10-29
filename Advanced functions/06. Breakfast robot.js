@@ -57,22 +57,24 @@ let cook = (function cook () {
     function cooker(recipe, quantity) {
 
         let counter = 0;
+        let errorflag = false;
         let elementsCount = Object.keys(recipes[recipe]).length;
 
-        for(let ingr in recipes[recipe]){
+        for(let ingr in recipes[recipe]) {
 
             if (recipes[recipe][ingr] * quantity > ingredients[ingr]) {
 
                 return `Error: not enough ${ingr} in stock`;
-                break;
+                errorflag = true;
             }
-            else {
-
-                ingredients[ingr] -= recipes[recipe][ingr] * quantity;
-                counter++;
-            }
-
         }
+           if(errorflag == false) {
+               for(let ingr in recipes[recipe]) {
+                   ingredients[ingr] -= recipes[recipe][ingr] * quantity;
+                   counter++;
+               }
+           }
+
 
         if (counter == elementsCount){
             return 'Success';
