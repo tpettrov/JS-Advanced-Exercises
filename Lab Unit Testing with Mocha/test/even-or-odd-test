@@ -1,0 +1,30 @@
+let expect = require('chai').expect;
+let isOddOrEven = require('../01. even or odd').isOddOrEven;
+
+
+describe("isOddOrEven", function() {
+
+    it("No string", function () {
+
+        expect(isOddOrEven(3)).to.be.equal(undefined);
+    });
+
+    it("string even", function () {
+
+        expect(isOddOrEven('even')).to.be.equal('even');
+    });
+
+    it("string odd", function () {
+
+        expect(isOddOrEven('odd')).to.be.equal('odd');
+    });
+
+    it("multiple strings", function () {
+
+        expect(isOddOrEven('anton')).to.be.equal('odd');
+        expect(isOddOrEven('odd')).to.be.equal('odd');
+        expect(isOddOrEven('note')).to.be.equal('even');
+    });
+
+
+});
