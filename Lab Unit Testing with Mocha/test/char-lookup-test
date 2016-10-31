@@ -1,0 +1,46 @@
+let expect = require('chai').expect;
+let lookupChar = require('../02. Char lookup').lookupChar;
+
+
+describe("Char lookup", function() {
+
+    it("No string", function () {
+
+        expect(lookupChar(3, 0)).to.be.equal(undefined);
+    });
+
+    it("No index number", function () {
+
+        expect(lookupChar('even', {} )).to.be.equal(undefined);
+    });
+
+    it("index out", function () {
+
+        expect(lookupChar('odd', 6)).to.be.equal('Incorrect index');
+    });
+
+    it("index < 0", function () {
+
+        expect(lookupChar('anton', -1)).to.be.equal('Incorrect index');
+
+    });
+    it("float on entrance", function () {
+
+        expect(lookupChar('anton', 4.5)).to.be.equal(undefined);
+
+    });
+
+
+    it("0 index", function () {
+
+        expect(lookupChar('anton', 0)).to.be.equal('a');
+
+    });
+    it("index at lenght", function () {
+
+        expect(lookupChar('anton', 4)).to.be.equal('n');
+
+    });
+
+
+});
