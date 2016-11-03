@@ -1,0 +1,47 @@
+class Rat{
+
+    constructor(name){
+
+        this.name = name;
+    }
+
+
+unite(otherRat) {
+
+    if(otherRat.constructor.name != 'Rat'){
+
+        return;
+    }
+    else {
+        this[otherRat.name] = otherRat;
+    }
+}
+
+
+getRats(){
+
+    let arr = [];
+    for (let obj in this) {
+
+        if (typeof(this[obj]) == 'object')
+            arr.push(this[obj]);
+
+
+    }
+    return arr;
+}
+
+
+
+
+
+}
+
+let a = new Rat('Zero');
+let b = new Rat('NumberOne');
+let c = new Rat('NumberTwo');
+let d = new Rat('NumberThree');
+a.unite(b);
+a.unite(c);
+a.unite(d);
+console.log(a.getRats());
