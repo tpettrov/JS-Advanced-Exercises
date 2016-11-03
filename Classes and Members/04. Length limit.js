@@ -43,8 +43,8 @@ class Stringer {
 }
 
 let test = new Stringer('Test', 5);
-test.increase(4);
-console.log(test.toString());
+
+console.log(test);
 console.log(test.innerString, test.innerLength);
 /*
  test.decrease(3);
